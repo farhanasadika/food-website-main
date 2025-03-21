@@ -170,3 +170,38 @@ jQuery(window).on('load', function () {
 
     }
 });
+
+
+// login and registration start here
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".login-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let email = this.querySelector("input[type='email']").value;
+        let password = this.querySelector("input[type='password']").value;
+
+        if (email === "" || password === "") {
+            alert("Please fill in all fields!");
+        } else {
+            alert("Login Successful!");
+            this.submit();
+        }
+    });
+
+    document.querySelector(".register-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let name = this.querySelector("input[type='text']").value;
+        let email = this.querySelector("input[type='email']").value;
+        let password = this.querySelector("input[type='password']").value;
+
+        if (name === "" || email === "" || password === "") {
+            alert("Please fill in all fields!");
+        } else {
+            alert("Registration Successful!");
+            this.submit();
+        }
+    });
+});
